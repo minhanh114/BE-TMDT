@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors');
+
 const app = express();
 
 const cookieParser = require('cookie-parser')
@@ -19,6 +21,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan(':method :url :status :response-time ms :date[iso]'))
 app.use(cookieParser())
 app.use(fileUpload());
+app.use(cors());
+
 
 
 // Import all routes
