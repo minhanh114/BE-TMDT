@@ -9,7 +9,7 @@ exports.isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
 
     const authHeader = req.headers.authorization;
 
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    if (!authHeader) {
         return next(new ErrorHandler('Vui lòng đăng nhập', 401));
     }
 
