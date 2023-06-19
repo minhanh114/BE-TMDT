@@ -11,8 +11,8 @@ const morgan = require('morgan')
 const errorMiddleware = require('./middlewares/errors')
 
 // Setting up config file 
-if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: './config/config.env' })
-dotenv.config({ path: './config/config.env' })
+if (process.env.NODE_ENV !== 'PRODUCTION') require('dotenv').config({ path: '.env' })
+dotenv.config({ path: '.env' })
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
