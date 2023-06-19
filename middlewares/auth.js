@@ -13,7 +13,7 @@ exports.isAuthenticatedUser = catchAsyncErrors(async (req, res, next) => {
         return next(new ErrorHandler('Vui lòng đăng nhập', 401));
     }
 
-    const token = authHeader.split(' ')[1];
+    const token = authHeader;
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET)
     req.user = await User.findById(decoded.id);
