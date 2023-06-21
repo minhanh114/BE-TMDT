@@ -23,7 +23,7 @@ router.route('/login').post(lookUser, loginUser);
 
 router.route('/logout').get(logout);
 
-router.route('/me').get(isAuthenticatedUser, getUserProfile)
+router.route('/me').get(getUserProfile)
 router.route('/password/update').put(isAuthenticatedUser, updatePassword)
 router.route('/me/update').put(isAuthenticatedUser, updateProfile)
 
