@@ -142,9 +142,9 @@ updateProfile : catchAsyncErrors(async (req, res, next) => {
 
 // Logout user   =>   /api/v1/logout
 logout : catchAsyncErrors(async (req, res, next) => {
-    res.cookie('token', null, {
-        expires: new Date(Date.now()),
-        httpOnly: true
+    res.clearCookie('token', {
+        expires: new Date(0),
+        httpOnly: false
     })
 
     res.status(200).json({
