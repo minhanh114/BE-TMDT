@@ -143,7 +143,7 @@ updateProfile : catchAsyncErrors(async (req, res, next) => {
 // Logout user   =>   /api/v1/logout
 logout : catchAsyncErrors(async (req, res, next) => {
     res.cookie('token','', {
-        expires: new Date(),
+        expires: new Date(0),
         httpOnly: true
     })
 
